@@ -9,7 +9,7 @@ import 'package:flutter_tdd/data/usecases/usecases.dart';
 import 'package:flutter_tdd/domain/helpers/helpers.dart';
 import 'package:flutter_tdd/domain/usecases/usecases.dart';
 
-import 'remote_authetication_test.mocks.dart';
+import 'remote_authentication_test.mocks.dart';
 
 @GenerateMocks([HttpClient])
 void main() {
