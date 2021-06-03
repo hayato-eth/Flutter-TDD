@@ -16,18 +16,19 @@ void main() {
   late RemoteAuthentication sut;
   late MockHttpClient httpClient;
   late String url;
+  late AuthenticationParams params;
 
   setUp(() {
     httpClient = MockHttpClient();
     url = faker.internet.httpUrl();
     sut = RemoteAuthentication(httpClient: httpClient, url: url);
-  });
-
-  test("Should call Httpclient with correct body", () async {
-    final params = AuthenticationParams(
+    params = AuthenticationParams(
       email: faker.internet.email(),
       secret: faker.internet.password(),
     );
+  });
+
+  test("Should call Httpclient with correct body", () async {
     await sut.auth(params);
 
     verify(
